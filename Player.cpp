@@ -28,11 +28,12 @@ bool Player::Play()
 		break;
 
 	case PlayerType::CPU:
-		int randomIndex = GetRand(m_canPutList.size() - 1);
+		int randomIndex = GetRand(static_cast<int>(m_canPutList.size()) - 1);
 		m_stageNode->FixPlay(m_canPutList[randomIndex], m_color);
 		return true;
 		break; 
 	}
+	return false;
 }
 
 bool Player::CanPutList()
